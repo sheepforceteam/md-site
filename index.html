@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minimalistic Black Theme Site</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="content"></div>
+    <div id="menu" class="menu">
+        <div class="card" onclick="loadMarkdown('md_files/file1.md')">
+            <img src="images/image1.png" alt="Image 1">
+            <p>File 1</p>
+        </div>
+        <!-- Add more cards for other markdown files -->
+    </div>
+    
+    <div id="content" class="content">
+        <!-- Markdown content will be loaded here -->
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    window.onload = function() {
-        var pageUrl = window.location.href;
-        var fileName = pageUrl.split("/").pop(); // Extract filename from URL
-        
-        // Fetch the Markdown file content
-        fetch(fileName)
-            .then(response => response.text())
-            .then(text => {
-                // Convert Markdown to HTML using Marked.js
-                var htmlContent = marked(text);
-                
-                // Display the HTML content on the page
-                document.getElementById('content').innerHTML = htmlContent;
-            })
-            .catch(error => {
-                console.error('Error fetching file:', error);
-                document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
-            });
-    };
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
