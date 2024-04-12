@@ -10,6 +10,8 @@ Weapon: Dual War Razor
 | STR | DEX | CON | INT | WIS | CHA | 
 | :-: | :-: | :-: | :-: | :-: | :-: | 
 | 14  | 18  | 12  | 10  | 14  | 10  | 
+
+
 LEVEL 1
 ---
 ```n
